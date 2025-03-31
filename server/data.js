@@ -35,6 +35,7 @@ exports.getLatestArtist = () => {
   };
 };
 
+
 exports.getArtistByArtistId = (artistId) => {
   const artist = { ...artists[artistId] };
   artist.albums = Object.values(albums)
@@ -42,10 +43,12 @@ exports.getArtistByArtistId = (artistId) => {
   return artist;
 };
 
+
 exports.addArtist = (data) => {
   const artistId = newArtistId();
   data.artistId = artistId;
   artists[artistId] = data;
+  //return artists;
   return artists[artistId];
 };
 

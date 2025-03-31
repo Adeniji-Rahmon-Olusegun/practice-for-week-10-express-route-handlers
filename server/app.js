@@ -25,6 +25,22 @@ const express = require('express');
 const app = express();
 
 // Your code here
+app.use(express.json());
+
+app.use((req, res, next) => {
+  console.log("Request Body:", req.body);
+  next();
+});
+
+app.get('/artists', (req, res) => {
+  const artists = getAllArtists();
+  res.json(artists);
+});
+
+app.post('/artists', (req, res) => {
+  const newData = addArtist(req.body);
+  res.status(201).json(newData);
+})
 
 // DO NOT MODIFY
 if (require.main === module) {
