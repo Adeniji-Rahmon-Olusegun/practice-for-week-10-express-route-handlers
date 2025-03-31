@@ -112,10 +112,11 @@ exports.addAlbumByArtistId = (artistId, data) => {
 };
 
 exports.editAlbumByAlbumId = (albumId, data) => {
-  albums[albumId] = {
-    ...albums[albumId],
-    ...data
-  };
+  // albums[albumId] = {
+  //   ...albums[albumId],
+  //   ...data
+  // };
+  albums[albumId].name = data.name;
   return albums[albumId];
 };
 
